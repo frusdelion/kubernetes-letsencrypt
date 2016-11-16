@@ -52,7 +52,7 @@ public class DnsRecordObserver {
   private void waitWithNameserver(String nameserver) {
     try {
       final Lookup lookup = new Lookup(recordName, Type.TXT);
-      lookup.setResolver(new SimpleResolver(nameserver));
+      lookup.setResolver(new SimpleResolver("8.8.8.8"));
 
       while (dateTime.plus(observerTimeout).isAfterNow()) {
         log.info("Looking up {} in {}", recordName, nameserver);
