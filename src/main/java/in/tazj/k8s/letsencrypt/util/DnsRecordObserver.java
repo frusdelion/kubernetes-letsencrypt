@@ -55,7 +55,7 @@ public class DnsRecordObserver {
       lookup.setResolver(new SimpleResolver(nameserver));
 
       while (dateTime.plus(observerTimeout).isAfterNow()) {
-        log.debug("Looking up {} in {}", recordName, nameserver);
+        log.info("Looking up {} in {}", recordName, nameserver);
         lookup.setCache(new Cache());
 
         final Record[] records = lookup.run();
@@ -66,7 +66,7 @@ public class DnsRecordObserver {
         }
 
         if (records != null) {
-          log.debug("Current value in {}: {}, expected: {}",
+          log.info("Current value in {}: {}, expected: {}",
               nameserver, records[0].rdataToString(), expectedValue);
         }
 
