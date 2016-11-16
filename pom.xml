@@ -11,7 +11,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <mainClass>in.tazj.k8s.letsencrypt.Main</mainClass>
-    <docker.imageName>tazjin/letsencrypt-controller</docker.imageName>
+    <docker.imageName>frusdelion/kubernetes-letsencrypt</docker.imageName>
     <docker.image>${docker.imageName}:${project.version}</docker.image>
   </properties>
 
